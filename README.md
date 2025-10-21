@@ -2,7 +2,7 @@
 
 ![SQL](https://img.shields.io/badge/SQL-MySQL%208.0%2B-4479A1?logo=mysql&logoColor=white) ![License](https://img.shields.io/badge/license-BlackCat%20Proprietary-red) ![Status](https://img.shields.io/badge/status-stable-informational) ![Generated](https://img.shields.io/badge/generated-from%20schema--map-blue)
 
-> Schema package for table **payment_webhooks** (repo: $slug).
+> Schema package for table **payment_webhooks** (repo: `payment-webhooks`).
 
 ## Files
 ```
@@ -51,13 +51,13 @@ mysql -h 127.0.0.1 -P 3307 -u root -proot app < schema/030_foreign_keys.sql
 ```mermaid
 erDiagram
   PAYMENT_WEBHOOKS {
-    BIGINT id PK
-    BIGINT payment_id
-    VARCHAR(255) gateway_event_id
-    CHAR(64) payload_hash
+    INT id PK
+    INT payment_id
+    VARCHAR gateway_event_id
+    VARCHAR payload_hash
     JSON payload
     BOOLEAN from_cache
-    DATETIME(6) created_at
+    DATETIME created_at
   }
   PAYMENT_WEBHOOKS }o--|| PAYMENTS : "payment_id"
 ```
