@@ -59,7 +59,7 @@ erDiagram
     BOOLEAN from_cache
     DATETIME(6) created_at
   }
-  PAYMENT_WEBHOOKS }o--|| PAYMENTS : (payment_id)
+  PAYMENT_WEBHOOKS }o--|| PAYMENTS : "payment_id"
 ```
 
 ## Indexes
