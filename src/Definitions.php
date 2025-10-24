@@ -6,7 +6,7 @@ namespace BlackCat\Database\Packages\PaymentWebhooks;
 final class Definitions {
     // --- základní metadata ---
     public static function table(): string { return 'payment_webhooks'; }
-    public static function contractView(): string { return 'v_payment_webhooks_contract'; }
+    public static function contractView(): string { return 'vw_payment_webhooks'; }
     /** @return string[] */
     public static function columns(): array { return [ 'id', 'payment_id', 'gateway_event_id', 'payload_hash', 'payload', 'from_cache', 'created_at' ]; }
     public static function pk(): string { return 'id'; }

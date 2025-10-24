@@ -10,7 +10,7 @@ namespace BlackCat\Database\Packages\PaymentWebhooks\Dto;
  */
 final class PaymentWebhookDto {
     public function __construct(
-        public readonly int $id,
+        public readonly ?int $id,
         public readonly ?int $paymentId,
         public readonly ?string $gatewayEventId,
         public readonly string $payloadHash,
