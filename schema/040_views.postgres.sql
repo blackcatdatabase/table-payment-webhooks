@@ -1,4 +1,4 @@
--- Auto-generated from schema-views-postgres.psd1 (map@38d5403)
+-- Auto-generated from schema-views-postgres.psd1 (map@c5e4097)
 -- engine: postgres
 -- table:  payment_webhooks
 -- Contract view for [payment_webhooks]
@@ -9,7 +9,7 @@ SELECT
   payment_id,
   gateway_event_id,
   payload_hash,
-  (payload IS NOT NULL) AS has_payload,
+  CASE WHEN payload IS NOT NULL THEN 1 ELSE 0 END AS has_payload,
   from_cache,
   created_at
 FROM payment_webhooks;
