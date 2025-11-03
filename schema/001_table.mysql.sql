@@ -10,6 +10,5 @@ CREATE TABLE IF NOT EXISTS payment_webhooks (
   from_cache BOOLEAN NOT NULL DEFAULT 0,
   created_at DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
   INDEX idx_payment_webhooks_payment (payment_id),
-  INDEX idx_payment_webhooks_gw_id (gateway_event_id),
-  INDEX idx_payment_webhooks_hash (payload_hash)
+  INDEX idx_payment_webhooks_gw_id (gateway_event_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
