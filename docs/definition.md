@@ -1,15 +1,15 @@
-<!-- Auto-generated from schema-map.psd1 @ 6cefe8e (2025-10-22T20:27:41+02:00) -->
+<!-- Auto-generated from schema-map-postgres.psd1 @ 62c9c93 (2025-11-20T21:38:11+01:00) -->
 # Definition – payment_webhooks
 
-Raw webhook payloads (deduplicated by payload_hash).
+Raw webhook payloads (deduplicated by payload_hash UNIQUE).
 
 ## Columns
 | Column | Type | Null | Default | Description | Notes |
 |-------:|:-----|:----:|:--------|:------------|:------|
-| id | BIGINT UNSIGNED | NO | — | Surrogate primary key. |  |
-| payment_id | BIGINT UNSIGNED | YES | — | Payment (FK payments.id), optional. |  |
+| id | BIGINT | — | AS | Surrogate primary key. |  |
+| payment_id | BIGINT | YES | — | Payment (FK payments.id), optional. |  |
 | gateway_event_id | VARCHAR(255) | YES | — | Gateway event id, optional. |  |
-| payload_hash | CHAR(64) | NO | — | Hash of payload for dedupe. |  |
-| payload | JSON | YES | — | Original JSON payload. |  |
-| from_cache | BOOLEAN | NO | 0 | Marked if sourced from cache/retry. |  |
-| created_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | Received at (UTC). |  |
+| payload_hash | CHAR(64) | NO | — | Hash of payload for dedupe (UNIQUE). |  |
+| payload | JSONB | YES | — | Original JSON payload. |  |
+| from_cache | BOOLEAN | NO | FALSE | Marked if sourced from cache/retry. |  |
+| created_at | TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Received at (UTC). |  |

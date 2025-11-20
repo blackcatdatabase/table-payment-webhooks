@@ -1,4 +1,4 @@
--- Auto-generated from schema-map-postgres.psd1 (map@9d3471b)
+-- Auto-generated from schema-map-postgres.psd1 (map@62c9c93)
 -- engine: postgres
 -- table:  payment_webhooks
 CREATE INDEX IF NOT EXISTS idx_payment_webhooks_payment ON payment_webhooks (payment_id);
