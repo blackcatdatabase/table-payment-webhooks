@@ -1,4 +1,4 @@
--- Auto-generated from schema-map-mysql.psd1 (map@db2f8b8)
+-- Auto-generated from schema-map-mysql.psd1 (map@734a489)
 -- engine: mysql
 -- table:  payment_webhooks
 CREATE TABLE IF NOT EXISTS payment_webhooks (
@@ -11,4 +11,4 @@ CREATE TABLE IF NOT EXISTS payment_webhooks (
   created_at DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
   INDEX idx_payment_webhooks_payment (payment_id),
   INDEX idx_payment_webhooks_gw_id (gateway_event_id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
