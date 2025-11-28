@@ -17,7 +17,7 @@ use BlackCat\Database\Support\DtoHydrator;
 final class PaymentWebhookDtoMapper
 {
     /** @var array<string,string> Column -> DTO property */
-    private const COL_TO_PROP = [ 'payment_id' => 'paymentId', 'gateway_event_id' => 'gatewayEventId', 'payload_hash' => 'payloadHash', 'from_cache' => 'fromCache', 'created_at' => 'createdAt' ];
+    private const COL_TO_PROP = [ 'id' => 'id', 'payment_id' => 'paymentId', 'gateway_event_id' => 'gatewayEventId', 'payload_hash' => 'payloadHash', 'payload' => 'payload', 'from_cache' => 'fromCache', 'created_at' => 'createdAt' ];
 
     /** @var string[] */
     private const BOOL_COLS   = [ 'from_cache' ];
