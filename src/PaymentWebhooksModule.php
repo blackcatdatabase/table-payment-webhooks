@@ -94,7 +94,7 @@ SQL;
         $hasView  = SchemaIntrospector::hasView($db, $d, $view);
 
         // Quick index/FK check â€“ generator injects names (case-sensitive per DB)
-        $expectedIdx = [ 'idx_payment_webhooks_gw_id', 'idx_payment_webhooks_payment', 'ux_payment_webhooks_payload' ];
+        $expectedIdx = [ 'ux_payment_webhooks_payload' ];
         if ($d->isMysql()) {
             // Drop PG-only index naming patterns (e.g., GIN/GiST)
             $expectedIdx = array_values(array_filter(
@@ -127,7 +127,7 @@ SQL;
             'columns'     => Definitions::columns(),
             'version'     => $this->version(),
             'dialects'    => [ 'mysql', 'postgres' ],
-            'indexes'     => [ 'idx_payment_webhooks_gw_id', 'idx_payment_webhooks_payment', 'ux_payment_webhooks_payload' ],
+            'indexes'     => [ 'ux_payment_webhooks_payload' ],
             'foreignKeys' => [ 'fk_payment_webhooks_payment' ],
         ];
     }
