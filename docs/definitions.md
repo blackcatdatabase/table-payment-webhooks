@@ -6,7 +6,7 @@ Raw webhook payloads (deduplicated by payload_hash UNIQUE).
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
 | created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Received at (UTC). |
-| from_cache | BOOLEAN | NO | FALSE | Marked if sourced from cache/retry. |
+| from_cache | BOOLEAN | NO | mysql: 0 / postgres: FALSE | Marked if sourced from cache/retry. |
 | gateway_event_id | VARCHAR(255) | YES |  | Gateway event id, optional. |
 | id | BIGINT | NO |  | Surrogate primary key. |
 | payload | mysql: JSON / postgres: JSONB | YES |  | Original JSON payload. |
@@ -58,5 +58,5 @@ Foreign keys:
 ## Views
 | View | Engine | Flags | File |
 | --- | --- | --- | --- |
-| vw_payment_webhooks | mysql | algorithm=MERGE, security=INVOKER | [schema\040_views.mysql.sql](schema\040_views.mysql.sql) |
-| vw_payment_webhooks | postgres |  | [schema\040_views.postgres.sql](schema\040_views.postgres.sql) |
+| vw_payment_webhooks | mysql | algorithm=MERGE, security=INVOKER | [../schema/040_views.mysql.sql](../schema/040_views.mysql.sql) |
+| vw_payment_webhooks | postgres |  | [../schema/040_views.postgres.sql](../schema/040_views.postgres.sql) |
