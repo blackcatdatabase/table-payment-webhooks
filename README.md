@@ -97,7 +97,7 @@ _No engine differences detected._
 
 ## Constraints Snapshot
 - `created_at` – default=CURRENT_TIMESTAMP(6)
-- `from_cache` – default=FALSE
+- `from_cache` – default=mysql: 0 / postgres: FALSE
 
 ## Schema Files
 | File | Engine |
