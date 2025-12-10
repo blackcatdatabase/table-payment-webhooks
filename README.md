@@ -96,8 +96,8 @@ graph LR
 _No engine differences detected._
 
 ## Constraints Snapshot
-- `created_at` – default=CURRENT_TIMESTAMP(6)
 - `from_cache` – default=mysql: 0 / postgres: FALSE
+- `created_at` – default=CURRENT_TIMESTAMP(6)
 
 ## Schema Files
 | File | Engine |
