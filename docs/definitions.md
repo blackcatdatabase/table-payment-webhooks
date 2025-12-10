@@ -5,11 +5,11 @@ Raw webhook payloads (deduplicated by payload_hash UNIQUE).
 ## Columns
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
-| created_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | Received at (UTC). |
-| from_cache | BOOLEAN | NO | 0 | Marked if sourced from cache/retry. |
+| created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Received at (UTC). |
+| from_cache | BOOLEAN | NO | FALSE | Marked if sourced from cache/retry. |
 | gateway_event_id | VARCHAR(255) | YES |  | Gateway event id, optional. |
 | id | BIGINT | NO |  | Surrogate primary key. |
-| payload | JSON | YES |  | Original JSON payload. |
+| payload | mysql: JSON / postgres: JSONB | YES |  | Original JSON payload. |
 | payload_hash | CHAR(64) | NO |  | Hash of payload for dedupe (UNIQUE). |
 | payment_id | BIGINT | YES |  | Payment (FK payments.id), optional. |
 
