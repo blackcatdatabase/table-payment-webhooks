@@ -41,11 +41,11 @@ final class Criteria extends BaseCriteria
         return [ 'gateway_event_id', 'payload_hash' ];
     }
 
-/** Columns allowed in ORDER BY (falls back to filterable() when empty). */
-protected function sortable(): array
-{
-    return [ 'id', 'payment_id', 'gateway_event_id', 'payload_hash', 'from_cache', 'created_at' ];
-}
+    /** Columns allowed in ORDER BY (falls back to filterable() when empty). */
+    protected function sortable(): array
+    {
+        return [ 'id', 'payment_id', 'gateway_event_id', 'payload_hash', 'from_cache', 'created_at' ];
+    }
 
     /**
      * Whitelist of joinable entities (for safe ->join() usage):
