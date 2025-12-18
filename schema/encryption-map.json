@@ -1,0 +1,29 @@
+{
+  "tables": {
+    "payment_webhooks": {
+      "columns": {
+        "created_at": {
+          "strategy": "passthrough"
+        },
+        "from_cache": {
+          "strategy": "passthrough"
+        },
+        "gateway_event_id": {
+          "strategy": "passthrough"
+        },
+        "id": {
+          "strategy": "passthrough"
+        },
+        "payload": {
+          "strategy": "passthrough"
+        },
+        "payload_hash": {
+          "strategy": "passthrough"
+        },
+        "payment_id": {
+          "strategy": "passthrough"
+        }
+      }
+    }
+  }
+}
